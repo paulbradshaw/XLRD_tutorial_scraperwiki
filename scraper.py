@@ -20,8 +20,8 @@ for sheet in book.sheets():
 # You can also access each worksheet by its index
 firstSheet = book.sheet_by_index(0)
 # You can loop over all the cells in the worksheet
-for row in range(0,firstSheet.nrows): # for each row
-    for column in range(0,firstSheet.ncols): # for each column within the row
+for row in range(firstSheet.nrows): # for each row
+    for column in range(firstSheet.ncols): # for each column within the row
         cell = firstSheet.cell(row,column)
         # Each cell may contain unicode
         cellValue = unicode(cell.value)
