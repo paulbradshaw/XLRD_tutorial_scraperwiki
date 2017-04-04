@@ -30,7 +30,10 @@ for row in range(0,firstSheet.nrows): # for each row
         
         # Test each cell to see if it's a year range and print each value
         match = re.match("(\d{4}-\d{2,4})",cellValue)
+        #different regex for the sitreps spreadsheet - uncomment for that url
+        match = re.match("([A-Z][0-9][0-9])",cellValue) #SHA codes, e.g. Q30
         if match:
             print "Year: " + cellValue
+            print "SHA Code: " + cellValue
             
         # We could then extract the income tax rates by year.
