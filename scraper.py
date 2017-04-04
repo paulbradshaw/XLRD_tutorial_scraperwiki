@@ -11,7 +11,7 @@ from scraperwiki import scrape
 url = 'http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
 #Comment out the line above and uncomment either of the 2 lines below to change the scraper so that it works
 #url = 'http://webarchive.nationalarchives.gov.uk/20140109143644/http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
-url = 'http://webarchive.nationalarchives.gov.uk/20130402145952/http://transparency.dh.gov.uk/files/2012/10/DailySR-Web-file-WE-02-12-12.xls'
+#url = 'http://webarchive.nationalarchives.gov.uk/20130402145952/http://transparency.dh.gov.uk/files/2012/10/DailySR-Web-file-WE-02-12-12.xls'
 # This line will open the spreasheet from an url
 book = xlrd.open_workbook(file_contents=scrape(url))
 # We can find out information about the workbook - number of sheets
@@ -31,9 +31,9 @@ for row in range(0,firstSheet.nrows): # for each row
         # Test each cell to see if it's a year range and print each value
         match = re.match("(\d{4}-\d{2,4})",cellValue)
         #different regex for the sitreps spreadsheet - uncomment for that url
-        match = re.match("([A-Z][0-9][0-9])",cellValue) #SHA codes, e.g. Q30
+        #match = re.match("([A-Z][0-9][0-9])",cellValue) #SHA codes, e.g. Q30
         if match:
             print "Year: " + cellValue
-            print "SHA Code: " + cellValue
+            #print "SHA Code: " + cellValue
             
         # We could then extract the income tax rates by year.
