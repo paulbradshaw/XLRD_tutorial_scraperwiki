@@ -8,8 +8,9 @@ import re
 
 from scraperwiki import scrape
 # Nice example of a spreadsheet with useful data!
-url = 'http://webarchive.nationalarchives.gov.uk/20140109143644/http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
-#oldurl = 'http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
+url = 'http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
+#Comment out the line above and uncomment the line below to change the scraper so that it works
+#url = 'http://webarchive.nationalarchives.gov.uk/20140109143644/http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
 # This line will open the spreasheet from an url
 book = xlrd.open_workbook(file_contents=scrape(url))
 # We can find out information about the workbook - number of sheets
@@ -20,8 +21,8 @@ for sheet in book.sheets():
 # You can also access each worksheet by its index
 firstSheet = book.sheet_by_index(0)
 # You can loop over all the cells in the worksheet
-for row in range(firstSheet.nrows): # for each row
-    for column in range(firstSheet.ncols): # for each column within the row
+for row in range(0,firstSheet.nrows): # for each row
+    for column in range(0,firstSheet.ncols): # for each column within the row
         cell = firstSheet.cell(row,column)
         # Each cell may contain unicode
         cellValue = unicode(cell.value)
