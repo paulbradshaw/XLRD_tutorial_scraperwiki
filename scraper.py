@@ -5,7 +5,7 @@
 # http://python-xlrd.sourcearchive.com/documentation/0.6.1/files.html
 import xlrd    
 import re
-import string
+
 from scraperwiki import scrape
 # Nice example of a spreadsheet with useful data!
 url = 'http://webarchive.nationalarchives.gov.uk/20140109143644/http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
