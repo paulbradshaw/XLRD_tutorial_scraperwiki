@@ -8,7 +8,8 @@ import re
 import string
 from scraperwiki import scrape
 # Nice example of a spreadsheet with useful data!
-url = 'http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
+url = 'http://webarchive.nationalarchives.gov.uk/20140109143644/http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
+#oldurl = 'http://www.hmrc.gov.uk/stats/tax_structure/incometaxrates_1974to1990.xls'
 # This line will open the spreasheet from an url
 book = xlrd.open_workbook(file_contents=scrape(url))
 # We can find out information about the workbook - number of sheets
